@@ -1,0 +1,42 @@
+.error {
+    background-image: url("../../../assets/imgs/postermovie2.jpg");
+    height: 100vh;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    .err-bg {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+        border-radius: 20px;
+        display: flex;
+
+        .err {
+            width: 400px;
+            padding: 10px 20px;
+            background-color: rgba(72, 70, 67, 1);
+            border-radius: 20px;
+            .text-err{
+                font-size: 100px;
+                color: rgba(240, 115, 22, 1);
+            }
+            .text-p-err{
+                font-size: 40px;
+            }
+            .text-link-home {
+                color: rgba(240, 115, 22, 1);
+                text-decoration: none;
+                font-weight: 500;
+                font-size: 20px;
+
+                &:hover {
+                    color: rgba(194, 64, 12, 1);
+
+                }
+            }
+        }
+    }
+}
