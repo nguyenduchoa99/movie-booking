@@ -1,4 +1,4 @@
-import { notification, Table, Tooltip } from "antd";
+import { Table, Tooltip } from "antd";
 import {
 	deleteUser,
 	getUsers,
@@ -13,7 +13,7 @@ import { AiOutlineCloseCircle, AiOutlineEdit } from "react-icons/ai";
 import "./userList.scss";
 import { useNavigate } from "react-router-dom";
 import Search from "antd/lib/input/Search";
-
+import Swal from 'sweetalert2'
 
 const UserList = () => {
 	
@@ -30,14 +30,16 @@ const UserList = () => {
 	const handleDelete = async (account) => {
 		try {
 			await dispatch(deleteUser(account)).unwrap();
-			notification.success({
-				message: "Xóa người dùng thành công",
-			});
+			Swal.fire({
+				icon:'success',
+				title:'Xóa người dùng thành công'
+			})
 		} catch (error) {
-			notification.error({
-				message: "Xóa người dùng thất bại",
-				description: error,
-			});
+			Swal.fire({
+				icon:'error',
+				title:'Xóa người dùng thất bại',
+				text:error
+			})
 		}
 	};
 
